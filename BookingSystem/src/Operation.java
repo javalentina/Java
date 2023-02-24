@@ -70,4 +70,8 @@ public class Operation {
         return clientBooking;
 
     }
+
+    public Date StringToDate(String date){
+        return null;
+    }
 }

@@ -49,9 +49,10 @@ public class ChatBot {
                     String bookingBegin = scanner.nextLine();
                     System.out.println("Please enter the End of  Date  Booking. Format dd.mm.year");
                     String bookingEnd = scanner.nextLine();
-                    Date bookingBegin = StringToDate(bookingBegin);
+                    Date bookingBeginDate = operation.StringToDate(bookingBegin);
+                    Date bookingEndDate = operation.StringToDate(bookingEnd);
                     System.out.println("Thank you For Booking. Here is your Booking Details:");
-                    operation.rentRoom(name, roomNumber, bookingBegin,bookingEnd);
+                    operation.rentRoom(name, roomNumber, bookingBeginDate,bookingEndDate);
 
                     break;
                 }
