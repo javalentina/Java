@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Operation {
@@ -20,13 +21,13 @@ public class Operation {
         return availableRooms;
     }
 
-    public void rentRoom(String name, Integer num) {
+    public void rentRoom(String name, Integer num, Date bookingBegin, Date bookingEnd) {
 
         Client client = new Client(name);
 
             for (HotelRoom hotelRoom : hotelRooms) {
                 if (hotelRoom.getNumber() == num) {
-                    Booking booking= new Booking(client, hotelRoom, BookingStatus.ACTIVE);
+                    Booking booking= new Booking(client, hotelRoom, BookingStatus.ACTIVE, bookingBegin, bookingEnd );
                     bookingList.add(booking);
                     hotelRoom.setAvailableOfRoom(AvailableOfRoom.RENT);
                     System.out.println(bookingList);

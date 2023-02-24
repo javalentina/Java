@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -44,8 +45,13 @@ public class ChatBot {
                     System.out.println("Please Enter your Name");
                     scanner.nextLine();
                     String name = scanner.nextLine();
+                    System.out.println("Please enter start Date of Booking. Format dd.mm.year");
+                    String bookingBegin = scanner.nextLine();
+                    System.out.println("Please enter the End of  Date  Booking. Format dd.mm.year");
+                    String bookingEnd = scanner.nextLine();
+                    Date bookingBegin = StringToDate(bookingBegin);
                     System.out.println("Thank you For Booking. Here is your Booking Details:");
-                    operation.rentRoom(name, roomNumber);
+                    operation.rentRoom(name, roomNumber, bookingBegin,bookingEnd);
 
                     break;
                 }
